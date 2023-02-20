@@ -75,6 +75,31 @@ public class GreedySolver {
 		System.out.println("V: " + finalV);
 	}
 	
+	public void ratioHeuristic(int weight) {
+		int finalV = 0;
+		int finalW = 0;
+		
+		itemList.sort((item1, item2) -> {
+			Double i1 = (double)item1.value/item1.weight;
+			Double i2 = (double)item2.value/item2.weight;
+			
+			return i2.compareTo(i1);
+		});
+		
+		for(int i = 0; i < itemList.size(); i++) {
+			if(itemList.get(i).weight <= weight) {
+				finalW = finalW + itemList.get(i).weight;
+				finalV = finalV + itemList.get(i).value;
+				weight = weight - itemList.get(i).weight;
+			}
+		}
+		
+		System.out.println("Value to weight heuristic");
+		System.out.println("W: " + finalW);
+		System.out.println("V: " + finalV);
+		
+	}
+	
 	class Item {
 		// Variables
 		private String name;

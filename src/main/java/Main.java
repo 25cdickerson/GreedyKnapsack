@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -10,9 +9,15 @@ public class Main {
 		int weight = Integer.parseInt(text.nextLine());
 		text.close();
 		
+		// Create a new GreedySolver and use the High Value Heuristic
 		GreedySolver greed = new GreedySolver();
 		greed.readInput();
-		ArrayList<GreedySolver.Item> list = greed.createItemList();
+		greed.createItemList();
 		greed.highValHeuristic(weight);
+		
+		GreedySolver greed0 = new GreedySolver();
+		greed0.readInput();
+		greed0.createItemList();
+		greed0.ratioHeuristic(weight);
 	}
 }
