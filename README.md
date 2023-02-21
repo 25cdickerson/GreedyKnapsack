@@ -268,4 +268,4 @@ It will continue to loop but will not find a weight less than or equal to three,
 This algorithm will tell us that the best solution for weight of 40, is a weight of 37 and a value of 1008.
 
 ## Analysis
-The ratio algorithm found a better solution (W: 37, V: 1008) than that of the best value algorithm (W: 37, V: 1004). This suggests that one is better than another in some situations but not all situations. Also, the  
+The ratio algorithm found a better solution (W: 37, V: 1008) than that of the high value algorithm (W: 37, V: 1004) when the weight is 40. But, when we let the weight be 1000, the high value algorithm (W: 969, V: 4113) is the superior alogorithm as opposed to the ratio algorithm (W: 789, V: 4098). This suggests that one is better than another in some situations but not all situations. 
